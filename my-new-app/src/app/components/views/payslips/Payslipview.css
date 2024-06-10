@@ -1,0 +1,59 @@
+.pay-slip-paper {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.pay-slip-paper * {
+  font-family: Arial, sans-serif;
+}
+
+.pay-slip-paper .ant-row {
+  margin-bottom: 15px;
+}
+
+.pay-slip-paper .ant-form-item {
+  margin-bottom: 0;
+}
+
+.pay-slip-paper .ant-form-item-label {
+  width: 100px;
+  text-align: center;
+}
+
+.pay-slip-paper .ant-input,
+.pay-slip-paper .ant-input-number {
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 150px;
+  text-align: center;
+}
+
+.pay-slip-paper .ant-input-disabled,
+.pay-slip-paper .ant-input-number-disabled {
+  color: #000;
+}
+
+.pay-slip-paper .ant-input-number-input {
+  text-align: center;
+}
+
+.pay-slip-paper .ant-btn-primary {
+  margin-top: 20px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printableArea,
+  #printableArea * {
+    visibility: visible;
+  }
+  #printableArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
