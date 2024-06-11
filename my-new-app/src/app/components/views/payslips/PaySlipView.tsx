@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import moment, { Moment } from 'moment';
 import {
   Button,
+  Card,
   Col,
   Form,
   Input,
@@ -9,6 +10,7 @@ import {
   message,
   Modal,
   Row,
+  Space,
   Table,
 } from 'antd';
 import './Payslipview.css';
@@ -104,7 +106,7 @@ const PaySlipView = () => {
       title: 'Payslip Month',
       dataIndex: 'payslipmonth',
       key: 'payslipmonth',
-      render: (text: string) => moment(text).format('YYYY-MM'),
+      render: (text: string) => moment(text).format('YYYY-MMMM'),
     },
     {
       title: 'Actions',
@@ -183,161 +185,161 @@ const PayslipForm = ({
   if (!payslip) return null;
 
   return (
-    <Form layout="vertical">
-      <Typography className="mb-4">
-        <Title level={3} className="text-center">
-          Techathalon Software
-        </Title>
-        <Text className="font-bold">
-          Name: {userData.firstname} {userData.lastname}
-        </Text>
-        <br />
-        <Text className="font-bold">Contact: {userData.contactno}</Text> <br />
-        <Text className="font-bold">Email ID: {userData.email}</Text>
-        <br />
-      </Typography>
-      <hr />
-      <Row gutter={[16, 16]}>
-        <Col span={8}>
-          <Form.Item label="Employee ID">
-            <Input name="employeeid" value={payslip.employeeid} disabled />
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item label="Month">
-            <Input
-              name="payslipmonth"
-              value={moment(payslip.payslipmonth).format('YYYY-MM')}
-              disabled
-            />
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item label="Basic Salary">
-            {editMode ? (
-              <InputNumber
-                name="basicsalary"
-                value={payslip.basicsalary}
-                onChange={(value) => handleInputChange('basicsalary', value)}
-              />
-            ) : (
-              <InputNumber
-                name="basicsalary"
-                value={payslip.basicsalary}
-                disabled
-              />
-            )}
-          </Form.Item>
-        </Col>
-      </Row>
-      <Row gutter={[16, 16]}>
-        <Col span={8}>
-          <Form.Item label="Allowance">
-            {editMode ? (
-              <InputNumber
-                name="allowance"
-                value={payslip.allowance}
-                onChange={(value) => handleInputChange('allowance', value)}
-              />
-            ) : (
-              <InputNumber
-                name="allowance"
-                value={payslip.allowance}
-                disabled
-              />
-            )}
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item label="Bonus">
-            {editMode ? (
-              <InputNumber
-                name="bonus"
-                value={payslip.bonus || 0}
-                onChange={(value) => handleInputChange('bonus', value)}
-              />
-            ) : (
-              <InputNumber name="bonus" value={payslip.bonus || 0} disabled />
-            )}
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item label="Deductions">
-            <InputNumber
-              name="deductions"
-              value={payslip.deductions || 0}
-              disabled
-            />
-          </Form.Item>
-        </Col>
-      </Row>
-      <Row gutter={[16, 16]}>
-        <Col span={8}>
-          <Form.Item label="Gross Salary">
-            <InputNumber
-              name="grosssalary"
-              value={payslip.grosssalary}
-              disabled
-            />
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item label="Net Pay">
-            <InputNumber name="netpay" value={payslip.netpay} disabled />
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item label="Professional Tax">
-            <InputNumber
-              name="professionaltax"
-              value={payslip.professionaltax}
-              disabled
-            />
-          </Form.Item>
-        </Col>
-      </Row>
-      <Row gutter={[16, 16]}>
-        <Col span={8}>
-          <Form.Item label="Provident Fund">
-            <InputNumber
-              name="providentfund"
-              value={payslip.providentfund}
-              disabled
-            />
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item label="Security Deposits">
-            <InputNumber
-              name="securitydeposits"
-              value={payslip.securitydeposits}
-              disabled
-            />
-          </Form.Item>
-        </Col>
-        <Col span={8}>
-          <Form.Item label="Total Deductions">
-            <InputNumber
-              name="totaldeductions"
-              value={payslip.totaldeductions}
-              disabled
-            />
-          </Form.Item>
-        </Col>
-      </Row>
-      {editMode && (
+    <Card bordered style={{ borderRadius: '8px' }}>
+      <Form layout="vertical">
+        <Typography className="mb-4">
+          <Title level={3} className="text-center">
+            Techathalon Software
+          </Title>
+          <Text strong>Name: {userData.firstname} {userData.lastname}</Text><br />
+          <Text strong>Contact: {userData.contactno}</Text><br />
+          <Text strong>Email ID: {userData.email}</Text>
+        </Typography>
+        <hr />
         <Row gutter={[16, 16]}>
           <Col span={8}>
-            <Button key="save" type="primary" onClick={onSave}>
-              Save
-            </Button>
-            <Button key="cancel" type="primary" onClick={onCancel}>
-              Cancel
-            </Button>
+            <Form.Item label="Employee ID">
+              <Input name="employeeid" value={payslip.employeeid} disabled />
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item label="Month">
+              <Input
+                name="payslipmonth"
+                value={moment(payslip.payslipmonth).format('YYYY-MMMM')}
+                disabled
+              />
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item label="Basic Salary">
+              {editMode ? (
+                <InputNumber
+                  name="basicsalary"
+                  value={payslip.basicsalary}
+                  onChange={(value) => handleInputChange('basicsalary', value)}
+                />
+              ) : (
+                <InputNumber
+                  name="basicsalary"
+                  value={payslip.basicsalary}
+                  disabled
+                />
+              )}
+            </Form.Item>
           </Col>
         </Row>
-      )}
-    </Form>
+        <Row gutter={[16, 16]}>
+          <Col span={8}>
+            <Form.Item label="Allowance">
+              {editMode ? (
+                <InputNumber
+                  name="allowance"
+                  value={payslip.allowance}
+                  onChange={(value) => handleInputChange('allowance', value)}
+                />
+              ) : (
+                <InputNumber
+                  name="allowance"
+                  value={payslip.allowance}
+                  disabled
+                />
+              )}
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item label="Bonus">
+              {editMode ? (
+                <InputNumber
+                  name="bonus"
+                  value={payslip.bonus || 0}
+                  onChange={(value) => handleInputChange('bonus', value)}
+                />
+              ) : (
+                <InputNumber name="bonus" value={payslip.bonus || 0} disabled />
+              )}
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item label="Deductions">
+              <InputNumber
+                name="deductions"
+                value={payslip.deductions || 0}
+                disabled
+              />
+            </Form.Item>
+          </Col>
+        </Row>
+        <Row gutter={[16, 16]}>
+          <Col span={8}>
+            <Form.Item label="Gross Salary">
+              <InputNumber
+                name="grosssalary"
+                value={payslip.grosssalary}
+                disabled
+              />
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item label="Net Pay">
+              <InputNumber name="netpay" value={payslip.netpay} disabled />
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item label="Professional Tax">
+              <InputNumber
+                name="professionaltax"
+                value={payslip.professionaltax}
+                disabled
+              />
+            </Form.Item>
+          </Col>
+        </Row>
+        <Row gutter={[16, 16]}>
+          <Col span={8}>
+            <Form.Item label="Provident Fund">
+              <InputNumber
+                name="providentfund"
+                value={payslip.providentfund}
+                disabled
+              />
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item label="Security Deposits">
+              <InputNumber
+                name="securitydeposits"
+                value={payslip.securitydeposits}
+                disabled
+              />
+            </Form.Item>
+          </Col>
+          <Col span={8}>
+            <Form.Item label="Total Deductions">
+              <InputNumber
+                name="totaldeductions"
+                value={payslip.totaldeductions}
+                disabled
+              />
+            </Form.Item>
+          </Col>
+        </Row>
+        {editMode && (
+          <Row gutter={[16, 16]}>
+            <Col span={24}>
+              <Space>
+                <Button key="save" type="primary" onClick={onSave}>
+                  Save
+                </Button>
+                <Button key="cancel" onClick={onCancel}>
+                  Cancel
+                </Button>
+              </Space>
+            </Col>
+          </Row>
+        )}
+      </Form>
+    </Card>
   );
 };
 
