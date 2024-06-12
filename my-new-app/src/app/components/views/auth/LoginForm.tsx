@@ -1,6 +1,6 @@
 import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Button, Checkbox, Form, Input, message } from 'antd';
+import { Button, Checkbox, Form, Input, message, Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm: React.FC = () => {
@@ -43,7 +43,7 @@ const LoginForm: React.FC = () => {
       }}
     >
       <div style={{ width: '300px' }}>
-        <h1 className='text-center font-bold mb-2'>Login</h1>
+        <Typography className='text-center font-bold mb-2'>Login</Typography>
         <Form
           name="normal_login"
           className="login-form "
