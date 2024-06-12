@@ -1,0 +1,15 @@
+/* AddEmployee.css */
+.ant-form-item-label {
+    color: #000; /* Set the color of the form labels to black */
+  }
+  
+  .ant-input {
+    background-color: #fff; /* Set the background color of inputs to white */
+    color: #000; /* Set the text color of inputs to black */
+  }
+  
+  .ant-select-selector {
+    background-color: #fff; /* Set the background color of selects to white */
+    color: #000; /* Set the text color of selects to black */
+  }
+  

@@ -3,6 +3,8 @@
     --secondary-color: #fff;
     --text-color: #000;
     --border-color: #e8e8e8;
+    --navbar-bg-color: #001529;
+    --navbar-text-color: #fff;
   }
   
   [data-theme="dark"] {
@@ -10,6 +12,8 @@
     --secondary-color: #fff;
     --text-color: #fff;
     --border-color: #e8e8e8;
+    --navbar-bg-color: #001529;
+    --navbar-text-color: #fff;
   }
   
   [data-theme="light"] {
@@ -17,6 +21,8 @@
     --secondary-color: #000;
     --text-color: #000;
     --border-color: #001529;
+    --navbar-bg-color: #f0f0f046; /* Light grey for better contrast */
+    --navbar-text-color: #000;
   }
   
   body {
@@ -28,26 +34,27 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--border-color);
-    background-color: var(--primary-color);
+    background-color: var(--navbar-bg-color);
     padding: 10px 20px;
+    color: var(--navbar-text-color);
   }
   
   .navbar-title {
     margin: 0;
     margin-right: 20px;
-    color: var(--text-color);
+    color: var(--navbar-text-color);
   }
   
   .user-box {
     margin-right: 20px;
     color: var(--secondary-color);
-    background-color: var(--primary-color);
+    background-color: var(--navbar-bg-color);
     padding: 5px 10px;
     border-radius: 5px;
   }
   
   .menu-item {
     margin: 0 10px;
-    color: var(--text-color);
+    color: var(--navbar-text-color);
   }
   

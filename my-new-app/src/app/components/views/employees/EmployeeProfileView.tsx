@@ -132,6 +132,14 @@ const EmployeeProfileView: React.FC = () => {
   };
 
   return (
+    <div 
+    style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '100vh',
+    }}
+    >
     <div style={{ maxWidth: '400px', margin: '0 auto' }}>
       <Card
         title="Employee Details"
@@ -321,6 +329,7 @@ const EmployeeProfileView: React.FC = () => {
           <p>{modalContent}</p>
         )}
       </Modal>
+    </div>
     </div>
   );
 };

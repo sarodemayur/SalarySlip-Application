@@ -2,6 +2,7 @@ import React from 'react';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Checkbox, Form, Input, message, Typography } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import './LoginForm.css';
 
 const LoginForm: React.FC = () => {
   const navigate = useNavigate();

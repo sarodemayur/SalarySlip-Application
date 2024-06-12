@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Form, Input, InputNumber, message, Select } from 'antd';
+import './AddEmployee.css';
 
 const { Option } = Select;
 
