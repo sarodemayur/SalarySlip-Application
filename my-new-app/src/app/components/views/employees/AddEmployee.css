@@ -1,15 +1,17 @@
 /* AddEmployee.css */
-.ant-form-item-label {
-    color: #000; /* Set the color of the form labels to black */
-  }
-  
-  .ant-input {
-    background-color: #fff; /* Set the background color of inputs to white */
-    color: #000; /* Set the text color of inputs to black */
-  }
-  
-  .ant-select-selector {
-    background-color: #fff; /* Set the background color of selects to white */
-    color: #000; /* Set the text color of selects to black */
-  }
-  
+
+:root {
+  --form-label-color: #000;
+}
+
+[data-theme="dark"] {
+  --form-label-color: #fff;
+}
+
+[data-theme="light"] {
+  --form-label-color: #000;
+}
+
+.ant-form-item-label > label {
+  color: var(--form-label-color);
+}

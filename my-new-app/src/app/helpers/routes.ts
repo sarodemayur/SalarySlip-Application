@@ -27,37 +27,37 @@ const routes: Routes[] = [
         Component:Dashboard,
         key:'Dashboard',
         path:'/dashboard',
-        isPrivate:false,
+        isPrivate:true,
     },
     {
         Component: AddEmployeePage,
         key:'AddEmployeePage',
         path: '/addemployee',
-        isPrivate:false
+        isPrivate:true,
     },
     {
         Component:EmployeeListPage,
         key:'EmployeeListPage',
         path: '/employeelist',
-        isPrivate:false
+        isPrivate:true,
     },
     {
         Component:EmployeeProfilePage,
         key:'EmployeeProfilePage',
         path: '/employee/:employeeid',
-        isPrivate:false
+        isPrivate:true
     },
     {
         Component:PaySlipPage,
         key:'PaySlipPage',
         path:'/payslippage',
-        isPrivate:false
+        isPrivate:true,
     },
     {
         Component:ForgetPassword,
         key:'ForgetPassword',
         path: '/forgetpassword',
-        isPrivate:false
+        isPrivate:true,
     }
 
 ];
